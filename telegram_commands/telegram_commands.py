@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, ConversationHandler, filters, CallbackQueryHandler
-from connectDB import connectDB
+from config.connectDB import connectDB
 from add_price_level_class import Add_Price_Level
 from add_to_observed_class import Add_To_Observed
 from delete_price_level_class import Delete_Price_Level

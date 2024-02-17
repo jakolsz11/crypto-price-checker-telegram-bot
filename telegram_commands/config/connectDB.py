@@ -1,8 +1,11 @@
 from pymongo import MongoClient
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 def connectDB(collection_name):
-    MONGO_URI = 'mongodb+srv://olszanecki11:OrCTzBIeISvd6mfu@cluster0.lfqxmh9.mongodb.net/?retryWrites=true&w=majority'
-    
+    MONGO_URI = os.getenv("MONGO_URI")
+
     client = MongoClient(MONGO_URI)
     
     try:
