@@ -7,12 +7,15 @@ from delete_price_level_class import Delete_Price_Level
 from delete_observed_class import Delete_Observed
 from show_observed_class import Show_Observed
 from show_price_levels_class import Show_Price_Levels
+from dotenv import load_dotenv
+load_dotenv()
+import os
 
 db_tokens = connectDB('tokens')
 db_observed = connectDB('observed_tokens')
 
 
-BOT_TOKEN = "6930544388:AAFm0rjAWeLQodSWZ4xUA1lzcoR6foNjVx0"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 CRYPTO_SYMBOL, PRICE_LEVEL, CHOOSE_SYMBOL, DELETE_COMMAND, END_QUESTION, GET_LEVELS, GET_TOKEN_OBSERVED, DELETE_OBSERVED, END_QUESTION = 1, 2, 3, 4, 5, 6, 7, 8, 9
 
 def main() -> None:

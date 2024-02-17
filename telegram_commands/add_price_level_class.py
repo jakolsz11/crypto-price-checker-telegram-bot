@@ -41,7 +41,7 @@ class Add_Price_Level:
                 tokenExists['reach'].append(float(price_level))
                 tokenExists['reach'].sort()
                 self.db.update_one({'_id': tokenExists['_id']}, {'$set': tokenExists})         
-                await update.message.reply_text(f'Price level added successfully!\n{context.user_data['crypto_symbol']}\n{price_level}')
+                await update.message.reply_text(f"Price level added successfully!\n{context.user_data['crypto_symbol']}\n{price_level}")
                 return ConversationHandler.END
             else:
                 keyboard = [
@@ -65,7 +65,7 @@ class Add_Price_Level:
                 print("Something went wrong while adding token")
                 await update.message.reply_text("Sorry, something went wrong! Please try again later!")
             else:
-                await update.message.reply_text(f'Price level added successfully!\n{context.user_data['crypto_symbol']}\n{price_level}')     
+                await update.message.reply_text(f"Price level added successfully!\n{context.user_data['crypto_symbol']}\n{price_level}")     
                 
             return ConversationHandler.END
         
